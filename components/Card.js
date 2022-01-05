@@ -1,10 +1,12 @@
+import Image from "next/image";
 import { PortableText } from "../lib/sanity";
 import styles from "../styles/Card.module.scss";
 
 const Card = ({ img, title, description, live, github }) => {
   return (
     <div className={styles.card}>
-      <img src={img} alt={title} loading="lazy" />
+      <Image src={img} alt={title} layout="fill" />
+      {/* <img src={img} alt={title} loading="lazy" /> */}
       <div className={styles.content}>
         <h4>{title}</h4>
         <PortableText blocks={description} />
