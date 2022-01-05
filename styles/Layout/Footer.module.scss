@@ -1,0 +1,48 @@
+#footer {
+  padding-bottom: 8rem;
+
+  .flexBetween {
+    display: flex;
+    flex-direction: column-reverse;
+
+    .socialContainer {
+      display: flex;
+      justify-content: space-evenly;
+      padding-bottom: 2.4rem;
+
+      svg {
+        color: #03daa9;
+        font-size: 3.2rem;
+        height: 3.2rem;
+        transition: 0.3s all;
+
+        &:hover {
+          color: darken(#03daa9, 10);
+        }
+      }
+    }
+
+    p {
+      text-align: center;
+    }
+  }
+}
+
+@media screen and (min-width: 48em) {
+  #footer {
+    width: 90%;
+    margin: 0 auto;
+    padding: 0 2.4rem 2.4rem;
+
+    .flexBetween {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      .socialContainer {
+        gap: 6.4rem;
+        padding-bottom: 0;
+      }
+    }
+  }
+}

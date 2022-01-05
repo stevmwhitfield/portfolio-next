@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@400;700&family=Ubuntu:wght@300;400;700&display=swap");
+
+// Colors
+$clr-dark: #262626;
+$clr-light: #ffffff;
+$clr-primary: #03daa9;
+
+// Mobile Font Sizes
+$fs-sm-h1: 3.6rem;
+$fs-sm-h2: 2.8rem;
+$fs-sm-h3: 2.1rem;
+$fs-sm-h4: 1.8rem;
+$fs-sm-p: 1.4rem;
+
+// Tablet Font Sizes
+$fs-md-h1: 5.2rem;
+$fs-md-h2: 3.2rem;
+$fs-md-h3: 2.4rem;
+$fs-md-h4: 2.1rem;
+$fs-md-p: 1.6rem;
+
+// Desktop Font Sizes
+$fs-h1: 9.6rem;
+$fs-h2: 6.4rem;
+$fs-h3: 3.6rem;
+$fs-h4: 2.4rem;
+$fs-p: 1.6rem;
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  line-height: 1.5;
+  font-weight: normal;
+  font-family: "Ubuntu", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  min-width: 100%;
+  min-height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  font-size: 1.6rem;
+  font-family: "Ubuntu", sans-serif;
+  background: $clr-dark;
+  color: $clr-light;
+  background: linear-gradient(-10deg, $clr-dark 60%, darken(#03daa9, 30) 100%);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: $fs-sm-h1;
+}
+
+h2 {
+  font-size: $fs-sm-h2;
+}
+
+h3 {
+  font-size: $fs-sm-h3;
+  font-family: "Ubuntu Mono", monospace;
+}
+
+h4 {
+  font-size: $fs-sm-h4;
+}
+
+p {
+  font-size: $fs-sm-p;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+// Tablet
+@media screen and (min-width: 30em) {
+  h1 {
+    font-size: $fs-md-h1;
+  }
+
+  h2 {
+    font-size: $fs-md-h2;
+  }
+
+  h3 {
+    font-size: $fs-md-h3;
+    font-family: "Ubuntu Mono", monospace;
+  }
+
+  h4 {
+    font-size: $fs-md-h4;
+  }
+
+  p {
+    font-size: $fs-md-p;
+  }
+}
+
+// Desktop
+@media screen and (min-width: 64em) {
+  h1 {
+    font-size: $fs-h1;
+  }
+
+  h2 {
+    font-size: $fs-h2;
+  }
+
+  h3 {
+    font-size: $fs-h3;
+    font-family: "Ubuntu Mono", monospace;
+  }
+
+  h4 {
+    font-size: $fs-h4;
+  }
+
+  p {
+    font-size: $fs-p;
+  }
+}

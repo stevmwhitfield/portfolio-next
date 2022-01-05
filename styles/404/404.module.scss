@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h1,
+  h3 {
+    text-align: center;
+    padding: 0.5em 0;
+  }
+
+  a {
+    border: 0.2rem solid #03daa9;
+    border-radius: 0.4rem;
+    padding: 0.5em 1.5em;
+    margin: 1.6rem 0;
+
+    transition: 0.3s all;
+
+    &:hover {
+      background-color: #03daa9;
+    }
+  }
+}

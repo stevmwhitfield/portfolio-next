@@ -1,0 +1,29 @@
+#featured {
+  width: 100%;
+  max-width: 154.4rem;
+  margin: 0 auto;
+  padding-bottom: 6.4rem;
+
+  h2 {
+    text-align: center;
+    padding-bottom: 1em;
+  }
+
+  .cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6.4rem;
+  }
+}
+
+@media screen and (min-width: 30rem) {
+  #featured .cards {
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+
+    > * {
+      justify-self: center;
+    }
+  }
+}

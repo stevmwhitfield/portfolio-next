@@ -1,0 +1,128 @@
+.card {
+  position: relative;
+  width: 32rem;
+  height: 45.3rem;
+  border: 0.2rem solid #03daa9;
+  border-radius: 0.8rem;
+  box-shadow: 0 1.2rem 3rem rgba(3, 218, 169, 0.1);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &:hover {
+    img {
+      filter: brightness(0.5) blur(3px);
+    }
+
+    .content,
+    .buttons {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  img {
+    position: absolute;
+    z-index: -1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.8rem;
+
+    transition: 0.3s all;
+  }
+
+  .content {
+    opacity: 0;
+    visibility: hidden;
+
+    padding: 2.4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    transition: 0.3s all;
+
+    h4 {
+      font-size: 3.2rem;
+      padding-bottom: 1.2rem;
+      align-self: flex-start;
+    }
+
+    p {
+      font-size: 1.6rem;
+    }
+  }
+  .buttons {
+    opacity: 0;
+    visibility: hidden;
+    padding: 2.4rem;
+    display: flex;
+    justify-content: space-between;
+
+    transition: 0.3s all;
+
+    .btn,
+    .btnSolid {
+      width: 11.4rem;
+      padding: 0.2em 0;
+
+      display: inline-block;
+      background-color: transparent;
+      border: 4px solid #ffffff;
+      border-radius: 0.4rem;
+
+      color: #03daa9;
+      font-size: 2.1rem;
+      font-weight: 700;
+      font-family: "Ubuntu Mono", monospace;
+      text-align: center;
+
+      transition: 0.3s all;
+
+      &:hover {
+        background-color: #ffffff;
+        border-color: #ffffff;
+      }
+
+      &:active {
+        transition: 0.2s all;
+        background-color: darken(#03daa9, 10);
+        border-color: darken(#03daa9, 10);
+      }
+
+      &Solid {
+        width: 13.5rem;
+
+        background-color: darken(#03daa9, 8);
+        border-color: darken(#03daa9, 8);
+        color: #ffffff;
+
+        &:hover {
+          background-color: transparent;
+          border-color: darken(#03daa9, 8);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 30em) {
+  .card {
+    width: 36rem;
+    height: 48rem;
+
+    .buttons {
+      .btn {
+        font-size: 2.4rem;
+        width: 12.8rem;
+
+        &Solid {
+          width: 15.2rem;
+        }
+      }
+    }
+  }
+}
