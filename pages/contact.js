@@ -3,7 +3,7 @@ import CustomHead from "../components/Head";
 import styles from "../styles/Contact/Contact.module.scss";
 import Form from "../components/Form";
 
-const Contact = ({ cards }) => {
+const Contact = () => {
   return (
     <>
       <CustomHead
@@ -13,7 +13,7 @@ const Contact = ({ cards }) => {
       />
       <Layout>
         <div id={styles.contact}>
-          <h1>Let's Talk</h1>
+          <h1>Let&apos;s Talk</h1>
 
           {/* FORM */}
           <Form />
