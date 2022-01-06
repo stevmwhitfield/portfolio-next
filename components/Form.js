@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Router from "next/router";
 import { useForm, ValidationError } from "@formspree/react";
 import styles from "../styles/Contact/Form.module.scss";
 
