@@ -5,7 +5,12 @@ import styles from "../styles/Card.module.scss";
 const Card = ({ img, title, description, live, github }) => {
   return (
     <div className={styles.card}>
-      <Image src={img} alt={title} layout="fill" />
+      <Image
+        className={styles.imgContainer}
+        src={img}
+        alt={title}
+        layout="fill"
+      />
       <div className={styles.content}>
         <h4>{title}</h4>
         <PortableText blocks={description} />
@@ -13,7 +18,7 @@ const Card = ({ img, title, description, live, github }) => {
       <div className={styles.buttons}>
         <a
           className={styles.btnSolid}
-          style={live === "" ? { visibility: "hidden" } : null}
+          style={live === null ? { visibility: "hidden" } : null}
           href={live}
           target="_blank"
           rel="noreferrer"

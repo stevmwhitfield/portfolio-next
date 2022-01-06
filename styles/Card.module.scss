@@ -22,16 +22,20 @@
     }
   }
 
-  img {
-    position: absolute;
-    z-index: -1000;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 0.8rem;
+  span {
+    z-index: -2000;
 
-    transition: 0.3s all;
+    img {
+      position: absolute;
+      z-index: -1000;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 0.8rem;
+
+      transition: 0.3s all;
+    }
   }
 
   .content {
