@@ -6,47 +6,34 @@ const Form = () => {
   const [formState, submit] = useForm(process.env.NEXT_PUBLIC_FORM);
   const [time, setTime] = useState(3);
 
-  if (state.succeeded) {
-    // On page load
-    useEffect(() => {
-      // Reduce 'time' by 1 for each second
-      const countdown = setInterval(() => {
-        setTime(time - 1);
-      }, 1000);
-      // Clean up interval timer
-      return () => {
-        clearInterval(countdown);
-      };
-    });
-
-    // On page load
-    useEffect(() => {
+  useEffect(() => {
+    if (state.succeeded) {
       // Redirect to home after 3 seconds
       const timer = setTimeout(() => {
         Router.push("/contact");
       }, 3000);
+      // Reduce 'time' by 1 for each second
+      const countdown = setInterval(() => {
+        setTime(time - 1);
+      }, 1000);
 
       // Clean up timeout
       return () => {
         clearTimeout(timer);
+        clearInterval(countdown);
       };
-    }, []);
-    return (
-      <>
-        <p>Successfully submitted!</p>
-        <p>Refreshing page in {time} seconds..</p>
-      </>
-    );
-  }
+    }
+  }, []);
 
   return (
-    <form
-      id={styles.form}
-      name="contact"
-      // action="/success"
-      method="POST"
-      onSubmit={submit}
-    >
+    <>
+      <p>Successfully submitted!</p>
+      <p>Refreshing page in {time} seconds..</p>
+    </>
+  );
+
+  return (
+    <form id={styles.form} name="contact" method="POST" onSubmit={submit}>
       <input type="hidden" name="form-name" value="contact" />
       <div id={styles.nameContainer}>
         <label>
