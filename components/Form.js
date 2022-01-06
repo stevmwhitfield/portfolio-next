@@ -1,55 +1,42 @@
-import { useState, useEffect } from "react";
 import Router from "next/router";
 import { useForm, ValidationError } from "@formspree/react";
 import styles from "../styles/Contact/Form.module.scss";
 
 const Form = () => {
   const [formState, submit] = useForm(process.env.NEXT_PUBLIC_FORM);
-  const [time, setTime] = useState(3);
-
-  useEffect(() => {
-    if (state.succeeded) {
-      // Redirect to home after 3 seconds
-      const timer = setTimeout(() => {
-        Router.push("/contact");
-      }, 3000);
-      // Reduce 'time' by 1 for each second
-      const countdown = setInterval(() => {
-        setTime(time - 1);
-      }, 1000);
-
-      // Clean up timeout
-      return () => {
-        clearTimeout(timer);
-        clearInterval(countdown);
-      };
-    }
-  }, []);
-
-  if (state.succeeded) {
-    return (
-      <>
-        <p>Successfully submitted!</p>
-        <p>Refreshing page in {time} seconds..</p>
-      </>
-    );
-  }
 
   return (
-    <form id={styles.form} name="contact" method="POST" onSubmit={submit}>
+    <form
+      id={styles.form}
+      name="contact"
+      action="/success"
+      method="POST"
+      onSubmit={() => {
+        submit();
+        Router.push("/success");
+      }}
+    >
       <input type="hidden" name="form-name" value="contact" />
       <div id={styles.nameContainer}>
         <label>
           Name
           <input type="text" name="name" required minLength="2" />
-          <ValidationError prefix="Name" field="name" errors={state.errors} />
+          <ValidationError
+            prefix="Name"
+            field="name"
+            errors={formState.errors}
+          />
         </label>
       </div>
       <div id={styles.emailContainer}>
         <label>
           Email
           <input type="email" name="email" required />
-          <ValidationError prefix="Email" field="email" errors={state.errors} />
+          <ValidationError
+            prefix="Email"
+            field="email"
+            errors={formState.errors}
+          />
         </label>
       </div>
       <div id={styles.messageContainer}>
@@ -59,14 +46,14 @@ const Form = () => {
           <ValidationError
             prefix="Message"
             field="message"
-            errors={state.errors}
+            errors={formState.errors}
           />
         </label>
       </div>
-      <button type="submit" disabled={state.submitting}>
+      <button type="submit" disabled={formState.submitting}>
         Send
       </button>
-      <ValidationError errors={state.errors} />
+      <ValidationError errors={formState.errors} />
     </form>
   );
 };
