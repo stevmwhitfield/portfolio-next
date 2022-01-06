@@ -26,12 +26,14 @@ const Form = () => {
     }
   }, []);
 
-  return (
-    <>
-      <p>Successfully submitted!</p>
-      <p>Refreshing page in {time} seconds..</p>
-    </>
-  );
+  if (state.succeeded) {
+    return (
+      <>
+        <p>Successfully submitted!</p>
+        <p>Refreshing page in {time} seconds..</p>
+      </>
+    );
+  }
 
   return (
     <form id={styles.form} name="contact" method="POST" onSubmit={submit}>
