@@ -5,17 +5,12 @@ import styles from "../styles/Contact/Form.module.scss";
 const Form = () => {
   const [formState, submit] = useForm(process.env.NEXT_PUBLIC_FORM);
 
+  if (formState.succeeded) {
+    Router.push("/success");
+  }
+
   return (
-    <form
-      id={styles.form}
-      name="contact"
-      action="/success"
-      method="POST"
-      onSubmit={() => {
-        submit();
-        Router.push("/success");
-      }}
-    >
+    <form id={styles.form} name="contact" method="POST" onSubmit={submit}>
       <input type="hidden" name="form-name" value="contact" />
       <div id={styles.nameContainer}>
         <label>
