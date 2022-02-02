@@ -11,6 +11,7 @@ const Test = () => {
         <li>Push the branch to GitHub to deploy.</li>
         <li>Go to the subdomain to confirm it worked.</li>
       </ul>
+      <hr />
       <p>Something to keep in mind...</p>
       <p><em>Since this website uses Next.js, the branch must also use Next.js, even if the page is extremely simple.</em></p>
       <p><em>Attempting to use a vanilla HTML page did not display the page despite not showing errors in deployment.</em></p>
