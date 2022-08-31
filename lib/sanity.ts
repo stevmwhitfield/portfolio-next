@@ -1,3 +1,4 @@
+import { SanityImageSource } from "@sanity/image-url/lib/types/types";
 import {
   createClient,
   createPreviewSubscriptionHook,
@@ -16,7 +17,7 @@ export const sanityClient = createClient(config);
 
 export const usePreviewSubscription = createPreviewSubscriptionHook(config);
 
-export const urlFor = source => createImageUrlBuilder(config).image(source);
+export const urlFor = (source: SanityImageSource) => createImageUrlBuilder(config).image(source);
 
 export const PortableText = createPortableTextComponent({
   ...config,
