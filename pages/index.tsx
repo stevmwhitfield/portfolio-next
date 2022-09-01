@@ -15,6 +15,7 @@ import {
   faFigma,
 } from "@fortawesome/free-brands-svg-icons";
 import { sanityClient, urlFor } from "../lib/sanity";
+import { GetStaticProps } from "next";
 
 const cardsQuery = `*[_type == "card"] | order(_createdAt) {
   _id,
@@ -25,7 +26,18 @@ const cardsQuery = `*[_type == "card"] | order(_createdAt) {
   live,
 }[0...3]`;
 
-const Home = ({ cards }) => {
+const Home = ({
+  cards,
+}: {
+  cards: {
+    _id: string;
+    title: string;
+    description: string;
+    image: string;
+    github: string;
+    live: string;
+  }[];
+}) => {
   return (
     <>
       <CustomHead
@@ -58,15 +70,15 @@ const Home = ({ cards }) => {
           <section id={styles.featured}>
             <h2>Featured Work</h2>
             <div className={styles.cards}>
-              {cards.map(card => {
+              {cards.map(({ _id, image, title, description, live, github }) => {
                 return (
                   <Card
-                    key={card._id}
-                    img={urlFor(card.image).url()}
-                    title={card.title}
-                    description={card.description}
-                    live={card.live}
-                    github={card.github}
+                    key={_id}
+                    img={urlFor(image).url()}
+                    title={title}
+                    description={description}
+                    live={live}
+                    github={github}
                   />
                 );
               })}
@@ -138,7 +150,7 @@ const Home = ({ cards }) => {
 
 export default Home;
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async () => {
   const cards = await sanityClient.fetch(cardsQuery);
   return { props: { cards } };
-}
+};

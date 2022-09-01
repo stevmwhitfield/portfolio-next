@@ -2,12 +2,25 @@ import Image from "next/image";
 import { PortableText } from "../lib/sanity";
 import styles from "../styles/Card.module.scss";
 
-const Card = ({ img, title, description, live, github }) => {
+const Card = ({
+  img,
+  title,
+  description,
+  live,
+  github,
+}: {
+  img: string | null;
+  title: string;
+  description: string;
+  live: string;
+  github: string;
+}) => {
+  const imageSource: string = typeof img === "string" ? img : "";
   return (
     <div className={styles.card}>
       <Image
         className={styles.imgContainer}
-        src={img}
+        src={imageSource}
         alt={title}
         layout="fill"
       />
@@ -18,7 +31,9 @@ const Card = ({ img, title, description, live, github }) => {
       <div className={styles.buttons}>
         <a
           className={styles.btnSolid}
-          style={live === null ? { visibility: "hidden" } : null}
+          style={
+            live === null ? { visibility: "hidden" } : { visibility: "visible" }
+          }
           href={live}
           target="_blank"
           rel="noreferrer"

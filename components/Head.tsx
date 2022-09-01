@@ -1,6 +1,14 @@
 import Head from "next/head";
 
-const CustomHead = ({ title, description, url }) => {
+const CustomHead = ({
+  title,
+  description,
+  url,
+}: {
+  title: string;
+  description: string;
+  url: string;
+}) => {
   return (
     <Head>
       {/* Primary Meta Tags */}

@@ -1,8 +1,8 @@
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import Header from "./Header";
+import Footer from "./Footer";
 import styles from "../styles/Layout/Layout.module.scss";
 
-const Layout = props => {
+const Layout = (props: any) => {
   return (
     <div className={styles.pageWrapper}>
       <Header />

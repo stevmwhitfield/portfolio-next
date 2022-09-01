@@ -3,6 +3,7 @@ import CustomHead from "../components/Head";
 import Card from "../components/Card";
 import { sanityClient, urlFor } from "../lib/sanity";
 import styles from "../styles/Portfolio/Portfolio.module.scss";
+import { GetStaticProps } from "next";
 
 const cardsQuery = `*[_type == "card"] | order(_createdAt) {
   _id,
@@ -13,7 +14,18 @@ const cardsQuery = `*[_type == "card"] | order(_createdAt) {
   live,
 }`;
 
-const Portfolio = ({ cards }) => {
+const Portfolio = ({
+  cards,
+}: {
+  cards: {
+    _id: string;
+    title: string;
+    description: string;
+    image: string;
+    github: string;
+    live: string;
+  }[];
+}) => {
   return (
     <>
       <CustomHead
@@ -27,15 +39,15 @@ const Portfolio = ({ cards }) => {
 
           {/* CARDS */}
           <div className={styles.cards}>
-            {cards.map(card => {
+            {cards.map(({ _id, image, title, description, live, github }) => {
               return (
                 <Card
-                  key={card._id}
-                  img={urlFor(card.image).url()}
-                  title={card.title}
-                  description={card.description}
-                  live={card.live}
-                  github={card.github}
+                  key={_id}
+                  img={urlFor(image).url()}
+                  title={title}
+                  description={description}
+                  live={live}
+                  github={github}
                 />
               );
             })}
@@ -51,7 +63,7 @@ const Portfolio = ({ cards }) => {
 
 export default Portfolio;
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async () => {
   const cards = await sanityClient.fetch(cardsQuery);
   return { props: { cards } };
-}
+};
