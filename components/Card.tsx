@@ -9,17 +9,18 @@ const Card = ({
   live,
   github,
 }: {
-  img: string;
+  img: string | null;
   title: string;
   description: string;
   live: string;
   github: string;
 }) => {
+  const imageSource: string = typeof img === "string" ? img : "";
   return (
     <div className={styles.card}>
       <Image
         className={styles.imgContainer}
-        src={img}
+        src={imageSource}
         alt={title}
         layout="fill"
       />
