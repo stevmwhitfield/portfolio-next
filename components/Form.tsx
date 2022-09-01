@@ -15,7 +15,7 @@ const Form = () => {
       <div id={styles.nameContainer}>
         <label>
           Name
-          <input type="text" name="name" required minLength="2" />
+          <input type="text" name="name" required minLength={2} />
           <ValidationError
             prefix="Name"
             field="name"
@@ -37,7 +37,7 @@ const Form = () => {
       <div id={styles.messageContainer}>
         <label>
           Message
-          <textarea name="message" cols="30" rows="8" required></textarea>
+          <textarea name="message" cols={30} rows={8} required></textarea>
           <ValidationError
             prefix="Message"
             field="message"
