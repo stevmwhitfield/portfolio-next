@@ -8,10 +8,13 @@ const Footer = () => {
       <div className={styles.flexBetween}>
         <p>&copy; 2022 Steven Whitfield. All Rights Reserved.</p>
         <div className={styles.socialContainer}>
-          <a href="https://github.com/stevmwhitfield">
+          <a href="https://github.com/stevmwhitfield" target={"_blank"}>
             <FontAwesomeIcon icon={faGithub} />
           </a>
-          <a href="https://www.linkedin.com/in/stevenmwhitfield/">
+          <a
+            href="https://www.linkedin.com/in/stevenmwhitfield/"
+            target={"_blank"}
+          >
             <FontAwesomeIcon icon={faLinkedin} />
           </a>
         </div>
