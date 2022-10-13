@@ -30,7 +30,7 @@ const FormSuccess = () => {
       <CustomHead
         title="Form Success | Steven Whitfield"
         description=""
-        url="https://www.stevenwhitfield.live/success"
+        url="https://www.stevenwhitfield.dev/success"
       />
       <Layout>
         <div className={styles.container}>

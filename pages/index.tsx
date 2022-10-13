@@ -43,7 +43,7 @@ const Home = ({
       <CustomHead
         title="Steven Whitfield - Software Developer"
         description="Steven Whitfield is a software developer specializing in front-end web development."
-        url="https://www.stevenwhitfield.live/"
+        url="https://www.stevenwhitfield.dev/"
       />
       <Layout>
         {/* HERO */}

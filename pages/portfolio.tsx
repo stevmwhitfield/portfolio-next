@@ -31,7 +31,7 @@ const Portfolio = ({
       <CustomHead
         title="Portfolio | Steven Whitfield"
         description="A collection of my works and projects."
-        url="https://www.stevenwhitfield.live/portfolio"
+        url="https://www.stevenwhitfield.dev/portfolio"
       />
       <Layout>
         <div id={styles.portfolio}>

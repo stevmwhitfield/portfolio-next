@@ -9,7 +9,7 @@ const PageNotFound = () => {
       <CustomHead
         title="Page Not Found | Steven Whitfield"
         description="Error 404: Page not found."
-        url="https://www.stevenwhitfield.live/404"
+        url="https://www.stevenwhitfield.dev/404"
       />
       <Layout>
         <div className={styles.container}>

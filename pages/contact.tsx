@@ -9,7 +9,7 @@ const Contact = () => {
       <CustomHead
         title="Contact Me | Steven Whitfield"
         description="Get in touch."
-        url="https://www.stevenwhitfield.live/contact"
+        url="https://www.stevenwhitfield.dev/contact"
       />
       <Layout>
         <div id={styles.contact}>
